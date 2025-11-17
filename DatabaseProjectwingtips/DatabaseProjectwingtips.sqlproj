@@ -10,6 +10,12 @@
   <ItemGroup>
     <None Include=".vscode\tasks.json" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NuGet.Build.Tasks.Pack" Version="6.14.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
   <Target Name="BeforeBuild">
     <Delete Files="$(BaseIntermediateOutputPath)\project.assets.json" />
   </Target>
