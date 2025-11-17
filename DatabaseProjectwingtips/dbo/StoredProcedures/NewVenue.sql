@@ -3,7 +3,7 @@
       @VenueId  INT,
       @VenueName NVARCHAR(128),
       @VenueType NVARCHAR(30) = 'multipurpose',
-      @PostalCode NVARCHAR(20) = '98052',
+      @PostalCode NVARCHAR(20) = '98055',
       @CountryCode CHAR(3) = 'USA'
   AS
       IF @VenueId IS NULL
