@@ -1,9 +1,9 @@
-    -- Creates a new Venue
+    -- Creates a new Venues
   CREATE PROCEDURE [dbo].[NewVenue]
       @VenueId  INT,
       @VenueName NVARCHAR(128),
       @VenueType NVARCHAR(30) = 'multipurpose',
-      @PostalCode NVARCHAR(20) = '98055',
+      @PostalCode NVARCHAR(20) = '98052',
       @CountryCode CHAR(3) = 'USA'
   AS
       IF @VenueId IS NULL
