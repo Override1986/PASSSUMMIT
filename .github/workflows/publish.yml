@@ -1,0 +1,26 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    - name: Restore dependencies
+      run: dotnet restore DatabaseProjectwingtips/DatabaseProjectwingtips.sqlproj
+    - name: Build
+      run: dotnet build DatabaseProjectwingtips/DatabaseProjectwingtips.sqlproj --no-restore
+    - name: Publish SQL project
+      run: |
+        sqlpackage /Action:Publish /SourceFile:DatabaseProjectwingtips/bin/Debug/DatabaseProjectwingtips.dacpac /TargetConnectionString:${{ secrets.SQL_CONNECTION_STRING }}
