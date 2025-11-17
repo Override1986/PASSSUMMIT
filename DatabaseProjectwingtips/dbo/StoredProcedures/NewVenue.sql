@@ -1,4 +1,5 @@
-CREATE PROCEDURE [dbo].[NewVenue]
+    -- Creates a new Venue
+  CREATE PROCEDURE [dbo].[NewVenue]
       @VenueId  INT,
       @VenueName NVARCHAR(128),
       @VenueType NVARCHAR(30) = 'multipurpose',
@@ -25,6 +26,4 @@ CREATE PROCEDURE [dbo].[NewVenue]
           (@VenueId, @VenueName,@VenueType,'admin@email.com',@CountryCode, @PostalCode)
   
   RETURN 0
-
-GO
-
+  GO
