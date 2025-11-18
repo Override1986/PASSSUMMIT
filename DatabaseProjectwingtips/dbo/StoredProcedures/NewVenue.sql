@@ -1,4 +1,4 @@
-    -- Creates a new Venueskk
+    -- Creates a new Venues
   CREATE PROCEDURE [dbo].[NewVenue]
       @VenueId  INT,
       @VenueName NVARCHAR(128),
